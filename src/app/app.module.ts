@@ -17,6 +17,8 @@ import { HomeModule } from './home/home.module';
 import { ShellModule } from './shell/shell.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { GameModule } from '@app/game/game.module';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   imports: [
@@ -29,9 +31,11 @@ import { AppRoutingModule } from './app-routing.module';
     IonicModule.forRoot(),
     SharedModule,
     ShellModule,
+    GameModule,
     HomeModule,
     AuthModule,
-    AppRoutingModule // must be imported as the last module as it contains the fallback route
+    AppRoutingModule,
+    StoreModule.forRoot({}, {}) // must be imported as the last module as it contains the fallback route
   ],
   declarations: [AppComponent],
   providers: [

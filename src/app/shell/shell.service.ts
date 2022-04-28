@@ -1,6 +1,5 @@
 import { Routes, Route } from '@angular/router';
 
-import { AuthenticationGuard } from '@app/auth';
 import { ShellComponent } from './shell.component';
 
 /**
@@ -16,8 +15,7 @@ export class Shell {
     return {
       path: '',
       component: ShellComponent,
-      children: routes,
-      canActivate: [AuthenticationGuard]
+      children: routes
     };
   }
 }
